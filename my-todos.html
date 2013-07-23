@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-1.7.1.js"></script>
+
+<script>
+
+function myTask()
+$('#btnName').click(function(){
+    var text = $('#inputName').val();
+    if(text.length){
+        $('<li />', {html: text}).appendTo('ul.taskList')
+    }
+
+	$('#inputName').val(''); {
+}
+});
+
+
+</script>
+
+<style>
+body {
+background-color:#d0e4fe;
+}
+h1 {
+color:gray;
+text-align:center;
+font-size:55px;
+}
+p {
+text-align: center;
+font-family:"Verdana";
+font-size:20px;
+}
+li {
+margin-left: 450px;
+font-family:"Verdana";
+font-size:20px;
+color:gray;
+}
+ul
+{
+list-style-type:circle;
+}
+</style>
+
+</head>
+
+<body onload="myTask()">
+
+
+<div id="container"><h1>To-Do List</h1>
+<p><input type="test" id="inputName" placeholder="Add Task"/>
+<button id="btnName">Submit!</button></p>
+<p><ul class="taskList"></ul></p>
+<script>
+    $(".taskList").on("click", "li", function () {
+    $(this).remove();
+});
+</script>
+</div>
+</body>
+</html>
